@@ -45,44 +45,159 @@ void main()											\n\
 
 void CrearFiguras()
 {
-	// El cuadrado y el rombo se forman con dos tri√°ngulos cada uno.
-	const float vertices[] = {
+	
 
-		// CUADRADO IZQUIERDO: tri√°ngulo 1
-		-0.85f, -0.30f, 0.0f,
-		-0.25f, -0.30f, 0.0f,
-		-0.25f,  0.30f, 0.0f,
+	const GLfloat vertices[] = {
 
-		// CUADRADO IZQUIERDO: tri√°ngulo 2
-		-0.85f, -0.30f, 0.0f,
-		-0.25f,  0.30f, 0.0f,
-		-0.85f,  0.30f, 0.0f,
+		
+		// LETRA I esta formada por 3 barras cada una de 2 triangulos
+		
 
-		// ROMBO DERECHO: tri√°ngulo izquierdo
-		 0.50f,  0.40f, 0.0f,
-		 0.18f,  0.00f, 0.0f,
-		 0.50f, -0.40f, 0.0f,
+		// Barra superior: tri·ngulo 1
+		-0.95f,  0.75f, 0.0f,
+		-0.47f,  0.75f, 0.0f,
+		-0.47f,  0.58f, 0.0f,
 
-		 // ROMBO DERECHO: tri√°ngulo derecho
-		  0.50f,  0.40f, 0.0f,
-		  0.50f, -0.40f, 0.0f,
-		  0.82f,  0.00f, 0.0f
+		// Barra superior: tri·ngulo 2
+		-0.95f,  0.75f, 0.0f,
+		-0.47f,  0.58f, 0.0f,
+		-0.95f,  0.58f, 0.0f,
+
+		// Barra vertical: tri·ngulo 1
+		-0.76f,  0.58f, 0.0f,
+		-0.66f,  0.58f, 0.0f,
+		-0.66f, -0.58f, 0.0f,
+
+		// Barra vertical: tri·ngulo 2
+		-0.76f,  0.58f, 0.0f,
+		-0.66f, -0.58f, 0.0f,
+		-0.76f, -0.58f, 0.0f,
+
+		// Barra inferior: tri·ngulo 1
+		-0.95f, -0.58f, 0.0f,
+		-0.47f, -0.58f, 0.0f,
+		-0.47f, -0.75f, 0.0f,
+
+		// Barra inferior: tri·ngulo 2
+		-0.95f, -0.58f, 0.0f,
+		-0.47f, -0.75f, 0.0f,
+		-0.95f, -0.75f, 0.0f,
+
+
+		
+		// LETRA B esta formada por 6 barras de 2 triangulos cada una
+		
+
+		// Barra vertical izquierda: tri·ngulo 1
+		-0.32f,  0.75f, 0.0f,
+		-0.22f,  0.75f, 0.0f,
+		-0.22f, -0.75f, 0.0f,
+
+		// Barra vertical izquierda: tri·ngulo 2
+		-0.32f,  0.75f, 0.0f,
+		-0.22f, -0.75f, 0.0f,
+		-0.32f, -0.75f, 0.0f,
+
+		// Barra superior: tri·ngulo 1
+		-0.22f,  0.75f, 0.0f,
+		 0.10f,  0.75f, 0.0f,
+		 0.10f,  0.58f, 0.0f,
+
+		 // Barra superior: tri·ngulo 2
+		 -0.22f,  0.75f, 0.0f,
+		  0.10f,  0.58f, 0.0f,
+		 -0.22f,  0.58f, 0.0f,
+
+		 // Barra central: tri·ngulo 1
+		 -0.22f,  0.08f, 0.0f,
+		  0.10f,  0.08f, 0.0f,
+		  0.10f, -0.08f, 0.0f,
+
+		  // Barra central: tri·ngulo 2
+		  -0.22f,  0.08f, 0.0f,
+		   0.10f, -0.08f, 0.0f,
+		  -0.22f, -0.08f, 0.0f,
+
+		  // Barra inferior: tri·ngulo 1
+		  -0.22f, -0.58f, 0.0f,
+		   0.10f, -0.58f, 0.0f,
+		   0.10f, -0.75f, 0.0f,
+
+		   // Barra inferior: tri·ngulo 2
+		   -0.22f, -0.58f, 0.0f,
+			0.10f, -0.75f, 0.0f,
+		   -0.22f, -0.75f, 0.0f,
+
+		   // Barra derecha superior: tri·ngulo 1
+			0.10f,  0.58f, 0.0f,
+			0.20f,  0.58f, 0.0f,
+			0.20f,  0.08f, 0.0f,
+
+			// Barra derecha superior: tri·ngulo 2
+			 0.10f,  0.58f, 0.0f,
+			 0.20f,  0.08f, 0.0f,
+			 0.10f,  0.08f, 0.0f,
+
+			 // Barra derecha inferior: tri·ngulo 1
+			  0.10f, -0.08f, 0.0f,
+			  0.20f, -0.08f, 0.0f,
+			  0.20f, -0.58f, 0.0f,
+
+			  // Barra derecha inferior: tri·ngulo 2
+			   0.10f, -0.08f, 0.0f,
+			   0.20f, -0.58f, 0.0f,
+			   0.10f, -0.58f, 0.0f,
+
+
+			   
+			   // LETRA A formada por 2 diagonales de 2 triangulos  y una barra de 2 triangulos
+			  
+
+			   // Barra diagonal izquierda: tri·ngulo 1
+				0.34f, -0.75f, 0.0f,
+				0.47f, -0.75f, 0.0f,
+				0.69f,  0.75f, 0.0f,
+
+				// Barra diagonal izquierda: tri·ngulo 2
+				 0.34f, -0.75f, 0.0f,
+				 0.69f,  0.75f, 0.0f,
+				 0.60f,  0.75f, 0.0f,
+
+				 // Barra diagonal derecha: tri·ngulo 1
+				  0.82f, -0.75f, 0.0f,
+				  0.95f, -0.75f, 0.0f,
+				  0.69f,  0.75f, 0.0f,
+
+				  // Barra diagonal derecha: tri·ngulo 2
+				   0.82f, -0.75f, 0.0f,
+				   0.69f,  0.75f, 0.0f,
+				   0.60f,  0.75f, 0.0f,
+
+				   // Barra central: tri·ngulo 1
+					0.46f,  0.06f, 0.0f,
+					0.84f,  0.06f, 0.0f,
+					0.84f, -0.10f, 0.0f,
+
+					// Barra central: tri·ngulo 2
+					 0.46f,  0.06f, 0.0f,
+					 0.84f, -0.10f, 0.0f,
+					 0.46f, -0.10f, 0.0f
 	};
 	glGenVertexArrays(1, &VAO); //generar 1 VAO
 	glBindVertexArray(VAO);//asignar VAO
 
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW); //pasarle los datos al VBO asignando tamano, los datos y en este caso es est√°tico pues no se modificar√°n los valores
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW); //pasarle los datos al VBO asignando tamano, los datos y en este caso es est·tico pues no se modificar·n los valores
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (GLvoid*)0);//Stride en caso de haber datos de color por ejemplo, es saltar cierta cantidad de datos
 	glEnableVertexAttribArray(0);
-	//agregar valores a v√®rtices y luego declarar un nuevo vertexAttribPointer
+	//agregar valores a vËrtices y luego declarar un nuevo vertexAttribPointer
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 
 }
-void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //Funci√≥n para agregar los shaders a la tarjeta gr√°fica
+void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //FunciÛn para agregar los shaders a la tarjeta gr·fica
 
 //the Program recibe los datos de theShader
 
@@ -92,11 +207,11 @@ void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //F
 	theCode[0] = shaderCode;//shaderCode es el texto que se le pasa a theCode
 	GLint codeLength[1];
 	codeLength[0] = strlen(shaderCode);//longitud del texto
-	glShaderSource(theShader, 1, theCode, codeLength);//Se le asigna al shader el c√≥digo
+	glShaderSource(theShader, 1, theCode, codeLength);//Se le asigna al shader el cÛdigo
 	glCompileShader(theShader);//Se comila el shader
 	GLint result = 0;
 	GLchar eLog[1024] = { 0 };
-	//verificaciones y prevenci√≥n de errores
+	//verificaciones y prevenciÛn de errores
 	glGetShaderiv(theShader, GL_COMPILE_STATUS, &result);
 	if (!result)
 	{
@@ -104,7 +219,7 @@ void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //F
 		printf("EL error al compilar el shader %d es: %s \n", shaderType, eLog);
 		return;
 	}
-	glAttachShader(theProgram, theShader);//Si no hubo problemas se asigna el shader a theProgram el cual asigna el c√≥digo a la tarjeta gr√°fica
+	glAttachShader(theProgram, theShader);//Si no hubo problemas se asigna el shader a theProgram el cual asigna el cÛdigo a la tarjeta gr·fica
 }
 
 void CompileShaders() {
@@ -119,8 +234,8 @@ void CompileShaders() {
 	//Para terminar de linkear el programa y ver que no tengamos errores
 	GLint result = 0;
 	GLchar eLog[1024] = { 0 };
-	glLinkProgram(shader);//se linkean los shaders a la tarjeta gr√°fica
-	//verificaciones y prevenci√≥n de errores
+	glLinkProgram(shader);//se linkean los shaders a la tarjeta gr·fica
+	//verificaciones y prevenciÛn de errores
 	glGetProgramiv(shader, GL_LINK_STATUS, &result);
 	if (!result)
 	{
@@ -159,7 +274,7 @@ void EstablecerColorDeFondo()
 		colorAzul =
 			static_cast<float>(rand()) / RAND_MAX;
 
-		// Guardar el momento en que cambi√≥ el color
+		// Guardar el momento en que cambiÛ el color
 		tiempoUltimoCambio = tiempoActual;
 	}
 
@@ -176,7 +291,7 @@ int main()
 {
 	
 	/*
-		Iniciar el generador de n√∫meros aleatorios.
+		Iniciar el generador de n˙meros aleatorios.
 
 		time(NULL) permite que los colores sean diferentes
 		cada vez que se abre el programa.
@@ -188,15 +303,15 @@ int main()
 	);
 	
 	
-	//Inicializaci√≥n de GLFW
+	//InicializaciÛn de GLFW
 	if (!glfwInit())
 	{
-		printf("Fall√≥ inicializar GLFW");
+		printf("FallÛ inicializar GLFW");
 		glfwTerminate();
 		return 1;
 	}
 
-	//****  LAS SIGUIENTES 4 L√çNEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSI√ìN DE OPENGL QUE TIENE ****/
+	//****  LAS SIGUIENTES 4 LÕNEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSI”N DE OPENGL QUE TIENE ****/
 
 	//Asignando variables de GLFW y propiedades de ventana
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -214,7 +329,7 @@ int main()
 		glfwTerminate();
 		return 1;
 	}
-	//Obtener tama√±o de Buffer
+	//Obtener tamaÒo de Buffer
 	int BufferWidth, BufferHeight;
 	glfwGetFramebufferSize(mainWindow, &BufferWidth, &BufferHeight);
 
@@ -226,7 +341,7 @@ int main()
 
 	if (glewInit() != GLEW_OK)
 	{
-		printf("Fall√≥ inicializaci√≥n de GLEW");
+		printf("FallÛ inicializaciÛn de GLEW");
 		glfwDestroyWindow(mainWindow);
 		glfwTerminate();
 		return 1;
@@ -254,15 +369,15 @@ int main()
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-
-		glDrawArrays(GL_TRIANGLES, 0, 12);
+		// Se modifica el numero de vertices que se van a dibujar por un total de 72
+		glDrawArrays(GL_TRIANGLES, 0, 72);
 		glBindVertexArray(0);
 
 		glUseProgram(0);
 
 		glfwSwapBuffers(mainWindow);
 
-		//NO ESCRIBIR NINGUNA L√çNEA DESPU√âS DE glfwSwapBuffers(mainWindow); 
+		//NO ESCRIBIR NINGUNA LÕNEA DESPU…S DE glfwSwapBuffers(mainWindow); 
 	}
 
 
