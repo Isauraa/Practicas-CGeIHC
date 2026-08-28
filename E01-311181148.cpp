@@ -2,28 +2,23 @@
 #include <string.h>
 #include <glew.h>
 #include <glfw3.h>
+#include <stdlib.h>
+#include <time.h>
 
 //Dimensiones de la ventana
 const int WIDTH = 800, HEIGHT = 800;
 GLuint VAO, VBO, shader;
 // Colores de fondo en formato RGB
-const float ROJO[] = {
-	1.0f,
-	0.0f,
-	0.0f
-};
+// Variables para guardar el color actual del fondo
+float colorRojo = 0.0f;
+float colorVerde = 0.0f;
+float colorAzul = 0.0f;
 
-const float VERDE[] = {
-	0.0f,
-	1.0f,
-	0.0f
-};
+// Cada color se muestra durante 2 segundos.
+const double SEGUNDOS_POR_COLOR = 2.0;
+// Se inicializa en -2 para generar un color desde el inicio
+double tiempoUltimoCambio = -2.0;
 
-const float AZUL[] = {
-	0.0f,
-	0.0f,
-	1.0f
-};
 
 //LENGUAJE DE SHADER (SOMBRAS) GLSL
 //Vertex Shader
@@ -148,33 +143,51 @@ void CompileShaders() {
 
 void EstablecerColorDeFondo()
 {
-	// Cada color se muestra durante 1.5 segundos.
-	const double SEGUNDOS_POR_COLOR = 1.5;
+	// Obtener el tiempo transcurrido
+	double tiempoActual = glfwGetTime();
 
-	//glfwGetTime() Obtiene los segundos transcurridos desde que GLFW fue inicializado.
-	// static_cast<int>() Convierte el resultado decimal en un número entero eliminando la parte decimal
-	// El operador módulo % obtiene el residuo de dividir entre 3. Esto hace que el resultado siempre sea: 0,1 o 2
-	int colorActual =
-		static_cast<int>(
-			glfwGetTime() / SEGUNDOS_POR_COLOR
-			) % 3;
+	// Comprobar si ya pasaron dos segundos
+	if (tiempoActual - tiempoUltimoCambio >= SEGUNDOS_POR_COLOR)
+	{
+		// Generar las tres componentes aleatorias
+		colorRojo =
+			static_cast<float>(rand()) / RAND_MAX;
 
-	if (colorActual == 0)
-	{
-		glClearColor(ROJO[0], ROJO[1], ROJO[2], 1.0f);
+		colorVerde =
+			static_cast<float>(rand()) / RAND_MAX;
+
+		colorAzul =
+			static_cast<float>(rand()) / RAND_MAX;
+
+		// Guardar el momento en que cambió el color
+		tiempoUltimoCambio = tiempoActual;
 	}
-	else if (colorActual == 1)
-	{
-		glClearColor(VERDE[0], VERDE[1], VERDE[2], 1.0f);
-	}
-	else
-	{
-		glClearColor(AZUL[0], AZUL[1], AZUL[2], 1.0f);
-	}
+
+	// Entregar el color generado a OpenGL
+	glClearColor(
+		colorRojo,
+		colorVerde,
+		colorAzul,
+		1.0f
+	);
 }
 
 int main()
 {
+	
+	/*
+		Iniciar el generador de números aleatorios.
+
+		time(NULL) permite que los colores sean diferentes
+		cada vez que se abre el programa.
+	*/
+	srand(
+		static_cast<unsigned int>(
+			time(NULL)
+			)
+	);
+	
+	
 	//Inicialización de GLFW
 	if (!glfwInit())
 	{
