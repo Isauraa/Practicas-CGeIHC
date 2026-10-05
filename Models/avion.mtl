@@ -1,0 +1,15 @@
+newmtl Goku
+Ka 1 1 1
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd ../Textures/goku_previo.jpg
+
+newmtl Cabello_Ojos
+Ka 1 1 1
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd ../Textures/cabello_ojos.png
