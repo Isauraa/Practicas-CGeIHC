@@ -1,0 +1,33 @@
+# Materiales con texturas de imagen
+newmtl Casco_Oscuro
+Ns 96
+Ka 0.15 0.15 0.15
+Kd 1 1 1
+Ks 0.35 0.35 0.35
+Ke 0 0 0
+Ni 1.45
+d 1
+illum 2
+map_Kd nave_metal_oscuro.png
+
+newmtl Motores_Oscuros
+Ns 128
+Ka 0.1 0.1 0.1
+Kd 1 1 1
+Ks 0.4 0.4 0.4
+Ke 0 0 0
+Ni 1.45
+d 1
+illum 2
+map_Kd nave_metal_oscuro.png
+
+newmtl Aros_Azules
+Ns 64
+Ka 0.01 0.1 0.2
+Kd 1 1 1
+Ks 0.1 0.2 0.3
+Ke 0.01 0.15 0.35
+Ni 1.0
+d 1
+illum 2
+map_Kd nave_luces_azules.png
