@@ -1,0 +1,41 @@
+newmtl cohete_1st_stage
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_3_etage.png
+
+newmtl cohete_2nd_stage
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_3_etage1.png
+
+newmtl cohete_3rd_stage
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_1_etage.png
+
+newmtl cohete_3rd_stage_engine
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_2_etage.png
+
+newmtl cohete_exhaust
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_motor.png
+
+newmtl cohete_white_plastic
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.3 0.3 0.3
+Ns 32
+map_Kd saturno_blanco.png
